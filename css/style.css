@@ -1,0 +1,451 @@
+/* -------------- */
+/* ---- BASE ---- */
+/* -------------- */
+html {
+    /* setting the font-size in the html element seems to fix inconsistencies across browsers when using rem */
+    font-size: 16px;
+}
+
+:root {
+    /* CSS variables prevent this file from validating with the https://jigsaw.w3.org/css-validator/#validate_by_input */
+    --main-accent-color: #89492b;
+    --main-header-color: #eaeaea;
+    --main-header-height: 120px;
+    --left-side-bg-color: #777777;
+    --left-side-width: 35%; 
+    --extended-header-color: var(--main-header-color);
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.3rem;
+    --default-font-size: 0.85rem;
+    --default-font-family: 'Roboto', sans-serif;
+    --default-content-padding: 1.15rem;
+    --stoke-color: black;
+    --stroke-width: 1.75px;
+    --stroke-diagonal: 0.5;
+    --heading-font-family: 'Roboto', sans-serif;
+  }
+
+* { box-sizing: border-box; }
+
+body {
+    padding-top: 1rem;
+    font-family: var(--default-font-family);
+    line-height: 1.5;
+    color: black;
+    font-size: var(--default-font-size);
+    background: rgb(204, 204, 204);
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 0.35rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font-family);
+    font-weight: 700;
+    color: black;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.9rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+    display: inline-block;
+}
+
+h4 {
+    font-size: var(--h3-font-size);
+    display: inline-block;
+    margin: 0;
+    font-weight: 900;
+}
+
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: .85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+   }
+
+.stroke {
+    /* original idea by https://stackoverflow.com/questions/2570972/css-font-border */
+    /* Not a perfect solution but I dont see another way to dynamically add a stroke around fonts using text-shadow */
+    /* unlike box-shadow, text-shadow doesn't have a spread-radius. With only blur-radius you cannot achieve a hard border */
+    /* Non standard alternative solution: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-stroke (bleeds into insides of font) */
+    text-shadow: 
+    calc(var(--stroke-width) * var(--stroke-diagonal))  calc(var(--stroke-width) * var(--stroke-diagonal)) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal) * -1)  calc(var(--stroke-width) * var(--stroke-diagonal)) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal))  calc(var(--stroke-width) * var(--stroke-diagonal) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal) * -1)  calc(var(--stroke-width) * var(--stroke-diagonal) * -1) 0 var(--stoke-color),
+    0px calc(var(--stroke-width) * var(--stroke-diagonal)) 0 var(--stoke-color),
+    0px calc(var(--stroke-width) * var(--stroke-diagonal) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal) * -1) 0px 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal)) 0px 0 var(--stoke-color),
+    calc(var(--stroke-width))  calc(var(--stroke-width)) 0 var(--stoke-color),
+    calc(var(--stroke-width) * -1)  calc(var(--stroke-width)) 0 var(--stoke-color),
+    calc(var(--stroke-width))  calc(var(--stroke-width) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width) * -1)  calc(var(--stroke-width) * -1) 0 var(--stoke-color),
+    0px calc(var(--stroke-width)) 0 var(--stoke-color),
+    0px calc(var(--stroke-width) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width) * -1) 0px 0 var(--stoke-color),
+    calc(var(--stroke-width)) 0px 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal))  calc(var(--stroke-width)) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal) * -1)  calc(var(--stroke-width)) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal))  calc(var(--stroke-width) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width) * var(--stroke-diagonal) * -1)  calc(var(--stroke-width) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width))  calc(var(--stroke-width) * var(--stroke-diagonal)) 0 var(--stoke-color),
+    calc(var(--stroke-width) * -1)  calc(var(--stroke-width) * var(--stroke-diagonal)) 0 var(--stoke-color),
+    calc(var(--stroke-width))  calc(var(--stroke-width) * var(--stroke-diagonal) * -1) 0 var(--stoke-color),
+    calc(var(--stroke-width) * -1)  calc(var(--stroke-width) * var(--stroke-diagonal) * -1) 0 var(--stoke-color);
+}
+
+.content {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    flex: 1 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.left, .right {
+    padding: var(--default-content-padding);
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.left {
+    max-width: var(--left-side-width);
+    min-width: var(--left-side-width);
+    background-color: var(--left-side-bg-color);
+    color: white;
+}
+
+.right {    
+    background-color: white;
+}
+
+.inline-link {
+    text-decoration: underline;
+    color: black;
+    opacity: 0.95;
+}
+
+
+/* ----------------------------------- */
+/* ---- Print as PDF notification ---- */
+/* ----------------------------------- */
+.print-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.print-text ol {
+    display: inline-block;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.print-text ol li{
+    text-align: left;
+    margin-bottom: 0.45rem;
+}
+
+.print-text ol li:last-of-type {
+    margin-bottom: 2rem;
+}
+
+#print-btn {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    z-index: 40;
+    color: white;
+    background-color: var(--main-accent-color);
+    border: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+    transition: box-shadow 0.3s;
+    outline: none;
+}
+
+#print-btn:hover {
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+/* ---- Print/Online Version conditionals ---- */
+/* ------------------------------------------- */
+.link-online-resume {
+    display: none; 
+}
+
+.container-din-a4 {
+    /* https://codepen.io/rafaelcastrocouto/pen/LFAes */
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    width: 21cm;
+    height: 29.7cm;
+}
+
+@media print {
+    body, .container-din-a4 {
+        padding-top: 0; 
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .print-text {
+        display: none;
+    }
+
+    .link-online-resume {
+        display: initial;
+        text-align: center;
+    }
+    
+    .link-online-resume a {
+        opacity: 0.9;
+        color: white;
+        text-decoration: none;
+        font-size: 0.7rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+    }
+}
+
+
+/* ------------------------- */
+/* ---- Profile picture ---- */
+/* ------------------------- */
+.profile-picture {
+    border-radius: 50%;
+    width: 70%;
+    display: block;
+    margin:  0 auto;
+    box-shadow: 0 0 0 5px #d8d2cf;
+}
+
+
+/* ------------------------ */
+/* ---- Skills Section ---- */
+/* ------------------------ */
+.skills-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.skill {
+    color: black;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 9.5px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.battery {
+    display: flex;
+    padding: 1.5px;
+    position: relative;
+    width: 60px;
+    height: 25px;
+    background-color: #eee;
+    border: 2.5px solid black;
+    border-radius: 3.5px;
+}
+
+.battery::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.5px);
+    transform: translateY(-50%);
+    display: block;
+    background: black;
+    height: 50%;
+    width: 5px;
+    border-radius: 0 100% 100% 0;
+}
+
+.cell {
+    flex: 1;
+    height: 100%;
+    border-radius: 2.5px;
+    background-color: var(--main-accent-color);
+    margin: 0 0.5px;
+    border: 2px solid black;
+}
+
+.cell-invisible {
+    visibility: hidden;
+}
+
+.skill-description {
+    margin-top: 0.15rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: white;
+    letter-spacing: 0;
+}
+
+/* ------------------------- */
+/* ---- Contact Section ---- */
+/* ------------------------- */
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact i {
+    font-size: 1.2rem;
+    width: 1.75rem;
+    line-height: 1.5;
+    color: var(--main-accent-color);
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+    letter-spacing: 0;
+}
+
+
+/* --------------------------- */
+/* ---- Languages Section ---- */
+/* --------------------------- */
+.languages-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* ------------------------- */
+/* ---- Hobbies Section ---- */
+/* ------------------------- */
+.hobbies {
+    margin-bottom: auto;
+}
+.hobbies-wrapper {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    color: var(--main-accent-color);
+}
+
+
+/* --------------------- */
+/* ---- main header ---- */
+/* --------------------- */
+.main-header {
+     /* bit of a hack to add a background color over the content padding without creating extra wrappers */
+    background-color: var(--main-header-color);
+    margin: calc(var(--default-content-padding) * -1); 
+    padding: calc(var(--default-content-padding));
+    padding-bottom: 0;
+    min-height: var(--main-header-height);
+}
+
+.main-header-center {
+    display: inline-block;
+}
+
+.name {
+    letter-spacing: 0.25rem;
+}
+
+.subtitle {
+    text-align: left;
+    margin-top: -0.8rem;
+    font-style: italic;
+    font-size: 1.25rem;
+}
+
+.extended-header-bg {
+    /* styles a <span> on the left content side so that it looks like the header extends the whole page width without changing html structure */
+    display: inline-block;
+    position: absolute;
+    background-color: var(--extended-header-color);
+    width: 100%;
+    height: var(--main-header-height);
+    margin: -1.15rem;
+    z-index: -1;
+}
+
+
+/* ------------------------------- */
+/* ---- Experience & Education---- */
+/* ------------------------------- */
+.experience-subtitle {
+    color: var(--main-accent-color);
+    font-weight: 700;
+    opacity: 0.75;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.block-list {
+    list-style-type: none;
+    padding-left: 2rem;
+    margin-top: 0;
+}
+
+.block-list li{
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.block-list li::before {
+    content: "\25cf";
+    color: var(--main-accent-color); 
+    opacity: 0.65;
+    float: left;
+    margin-left: -1.5rem;
+  }
+
+.inline-resource-list {
+    margin-bottom: 1rem;
+}
+
+.inline-resource-list a {
+    display: inline-block;
+    border-radius: 3px;
+    text-decoration: underline;
+    margin-bottom: 2px;
+    margin-right: 7px;
+    color: black;
+    opacity: 0.95;
+}
