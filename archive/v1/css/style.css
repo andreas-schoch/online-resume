@@ -12,7 +12,7 @@ html {
     --main-header-color: #eaeaea;
     --main-header-height: 120px;
     --left-side-bg-color: #777777;
-    --left-side-width: 33%; 
+    --left-side-width: 35%; 
     --extended-header-color: var(--main-header-color);
     --h1-font-size: 2.5rem;
     --h2-font-size: 1.3rem;
@@ -25,9 +25,7 @@ html {
     --heading-font-family: 'Roboto', sans-serif;
   }
 
-* { 
-    box-sizing: border-box; 
-}
+* { box-sizing: border-box; }
 
 body {
     padding-top: 1rem;
@@ -59,8 +57,8 @@ h1 {
 h2 {
     font-size: var(--h2-font-size);
     text-align: center;
-    margin-top: 1.4rem;
-    margin-bottom: 0.7rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.9rem;
     text-transform: uppercase;
 }
 
@@ -158,23 +156,36 @@ kbd {
 }
 
 
-/* --------------------------------------------- */
-/* ---- Conditionals online & print version ---- */
-/* --------------------------------------------- */
-.online-only {
-    margin: 3rem 0;
+/* ----------------------------------- */
+/* ---- Print as PDF notification ---- */
+/* ----------------------------------- */
+.print-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
-.print-only {
-    display: none; 
+.print-text ol {
+    display: inline-block;
+    width: 600px;
+    margin: 0 auto;
 }
 
-.open-pdf-btn {
+.print-text ol li{
+    text-align: left;
+    margin-bottom: 0.45rem;
+}
+
+.print-text ol li:last-of-type {
     margin-bottom: 2rem;
-    text-decoration: none;
+}
+
+#print-btn {
     font-size: 0.7rem;
     text-transform: uppercase;
+    z-index: 40;
     color: white;
     background-color: var(--main-accent-color);
     border: none;
@@ -185,13 +196,16 @@ kbd {
     outline: none;
 }
 
-.open-pdf-btn:hover {
+#print-btn:hover {
     box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
     cursor: pointer;
 }
 
-.online-only p {
-    margin-top: 2rem;
+/* ------------------------------------------- */
+/* ---- Print/Online Version conditionals ---- */
+/* ------------------------------------------- */
+.link-online-resume {
+    display: none; 
 }
 
 .container-din-a4 {
@@ -212,16 +226,16 @@ kbd {
         box-shadow: none;
     }
 
-    .online-only {
+    .print-text {
         display: none;
     }
 
-    .print-only {
+    .link-online-resume {
         display: initial;
         text-align: center;
     }
     
-    .print-only a {
+    .link-online-resume a {
         opacity: 0.9;
         color: white;
         text-decoration: none;
@@ -249,35 +263,62 @@ kbd {
 .skills-wrapper {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .skill {
+    color: black;
     display: flex;
     flex-flow: column nowrap;
+    margin: 0 9.5px;
     text-align: center;
+    letter-spacing: 1px;
 }
 
-.skill i {
-    color: var(--main-accent-color);
-    font-size: 1.5rem;
-    box-shadow: 0 0 0 3px black inset;
-    background-color: #eaeaea;
-    width: calc(3.5rem - 6px);
-    padding: 0.25rem 0;
-    border-radius: 2px;
+.battery {
+    display: flex;
+    padding: 1.5px;
+    position: relative;
+    width: 60px;
+    height: 25px;
+    background-color: #eee;
+    border: 2.5px solid black;
+    border-radius: 3.5px;
+}
+
+.battery::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.5px);
+    transform: translateY(-50%);
+    display: block;
+    background: black;
+    height: 50%;
+    width: 5px;
+    border-radius: 0 100% 100% 0;
+}
+
+.cell {
+    flex: 1;
+    height: 100%;
+    border-radius: 2.5px;
+    background-color: var(--main-accent-color);
+    margin: 0 0.5px;
+    border: 2px solid black;
+}
+
+.cell-invisible {
+    visibility: hidden;
 }
 
 .skill-description {
-    margin-bottom: auto;
-    margin-bottom: 0.6rem;
-    font-size: 1rem;
-    font-weight: 400;
+    margin-top: 0.15rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
     color: white;
     letter-spacing: 0;
-    font-family: 'Open Sans Condensed', sans-serif;
 }
-
 
 /* ------------------------- */
 /* ---- Contact Section ---- */
@@ -288,9 +329,6 @@ kbd {
 }
 
 .contact i {
-    margin-left: -5px;
-    margin-right: 0.25rem;
-    text-align: center;
     font-size: 1.2rem;
     width: 1.75rem;
     line-height: 1.5;
@@ -321,7 +359,6 @@ kbd {
 .hobbies {
     margin-bottom: auto;
 }
-
 .hobbies-wrapper {
     font-size: 1.5rem;
     display: flex;

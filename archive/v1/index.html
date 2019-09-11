@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/1778aebba3.js"></script>
+    <script src="js/script.js"></script>
     <title>Andreas Schoch CV</title>
 </head>
 
@@ -35,14 +36,12 @@
                                 <li>Experienced working as a team in a Gitlab CI/CD environment</li>
                                 <li>
                                     <p>
-                                        <h4>Final Project:</h4> Made on behalf of a <a class="inline-link" href="https://storyshare.co"
-                                        target="_blank" rel="noopener noreferrer" title="company website">company</a>. It's a social video sharing platform where users can upload
+                                        <h4>Final Project:</h4> A social video sharing platform where users can upload
                                         videos and reply to them with videos. Developed with a team of 3 during 2.5
-                                        weeks (<a class="inline-link" href="https://is.gd/storyshare_presentation"
-                                        target="_blank" rel="noopener noreferrer" title="final project presentation">see Presentation</a>).
+                                        weeks.
                                     </p>
 
-                                    <p>The project required us to learn new technologies on the fly like: WebRTC for recording, a
+                                    <p>The project required us to learn new technologies like WebRTC for recording, a
                                         CDN provider for distribution and Traefik as a reverse proxy.</p>
                                 </li>
                             </ul>
@@ -58,7 +57,7 @@
                                     mechanics.
                                 </li>
                                 <li>Used HTML, CSS and pure JavaScript to create responsive websites.</li>
-                                <li>Developed simple backend APIs with Express, MongoDB and OAuth.</li>
+                                <li>Developed simple back-end APIs with Express, MongoDB and OAuth.</li>
                             </ul>
                         </div>
                         <div class="experience">
@@ -153,7 +152,9 @@
                     <h2>About</h2>
                     <div class="about-wrapper">
                         <p>
-                            Spent over 2500h acquiring relevant development skills &middot; Born and raised in Switzerland &middot; Self-taught hobby programmer since 2015 &middot; Now determined to turn professional
+                            Born and raised in Switzerland &middot; self-taught hobby programmer since 2015 &middot;
+                            started out creating games using UE4 & C++ &middot; Learned HTML, CSS & JS in 2017 &middot;
+                            Now determined to turn professional
                         </p>
                     </div>
                 </section>
@@ -162,51 +163,94 @@
                     <h2>Skills</h2>
                     <div class="skills-wrapper">
                         <div class="skill">
-                            <i class="fab fa-html5"></i>
-                            <p class="skill-description">HTML</p>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
+                            <p class="skill-description">HTML/CSS</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
+                            <p class="skill-description">Javascript</p>
                         </div>
                         <div class="skill">
-                            <i class="fab fa-css3-alt"></i>
-                            <p class="skill-description">CSS</p>
-                        </div>
-                        <div class="skill">
-                            <i class="fab fa-js-square"></i>
-                            <p class="skill-description skill-description-shrink">JavaScript</p>
-                        </div>
-                        <div class="skill">
-                            <i class="fab fa-react"></i>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
                             <p class="skill-description">React</p>
                         </div>
                         <div class="skill">
-                            <i class="fab fa-node-js"></i>
-                            <p class="skill-description">NodeJS</p>
-                        </div>
-                        <div class="skill">
-                            <i class="fab fa-python"></i>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
                             <p class="skill-description">Python</p>
                         </div>
                         <div class="skill">
-                            <i class="fab fa-python"></i>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
                             <p class="skill-description">Django</p>
                         </div>
                         <div class="skill">
-                            <i class="fab fa-git"></i>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
                             <p class="skill-description">Git</p>
-                        </div>                        
+                        </div>
                         <div class="skill">
-                            <i class="fas fa-server"></i>
-                            <p class="skill-description">Nginx</p>
-                        </div>                        
-                        <div class="skill">
-                            <i class="fab fa-docker"></i>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
                             <p class="skill-description">Docker</p>
                         </div>
                         <div class="skill">
-                            <i class="fab fa-gitlab"></i>
-                            <p class="skill-description">Gitlab CI</p>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
+                            <p class="skill-description">CI/CD</p>
                         </div>
                         <div class="skill">
-                            <i class="fab fa-cuttlefish"></i>
+                            <div class="battery">
+                                <span class="cell"></span>
+                                <span class="cell"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                                <span class="cell cell-invisible"></span>
+                            </div>
                             <p class="skill-description">C++</p>
                         </div>
                     </div>
@@ -228,10 +272,6 @@
                         <div class="contact">
                             <i class="fas fa-at stroke"></i>
                             <a href="mailto:andreas_schoch@outlook.com">andreas_schoch@outlook.com</a>
-                        </div>
-                        <div class="contact">
-                            <i class="fas fa-phone-square-alt stroke"></i>
-                            <a href="tel:+41787753241">+41 78 775 32 41</a>
                         </div>
                         <div class="contact">
                             <i class="fas fa-map-marker-alt stroke"></i>
@@ -261,19 +301,28 @@
                     </div>
                 </section>
 
-                <div class="print-only">
+                <section class="link-online-resume">
                     <a href="https://andreas-schoch.github.io/online-resume" target="_blank" rel="noopener noreferrer" title="my youtube channel">Online version of this document</a>
-                </div>
+                </section>
             </div>
         </div>
     </div>
 
-    <div class="online-only">
-        <a class="open-pdf-btn" href="./pdf/andreas-schoch-cv.pdf" target="_blank" rel="noopener noreferrer">Open PDF version of this document</a>
+    <div class="print-text">
+        <h2>To save this Resume/CV as PDF in DIN A4 Format:</h2>
+        <ol>
+            <li>Make sure you are viewing this page with Chrome (As it seems to be the only major browser which prints
+                it the correct way)</li>
+            <li>Press <kbd>Ctrl</kbd> + <kbd>P</kbd> or click this button &rarr; <button id="print-btn">open Print
+                    Dialog</button></li>
+            <li>Goto "More settings" and <strong>check "Background graphics"</strong></li>
+            <li>set <strong>Margins to "None"</strong> the <strong>Layout to "Portrait"</strong> and <strong>Destination
+                    "Save as PDF"</strong></li>
+            <li>You should see a single page, that takes up the entire page, looking exactly like the online version
+                (excluding this text). <strong>press "Save"</strong></li>
+        </ol>
         <p>Thank you for your time!</p>
     </div>
-
-
 </body>
 
 </html>

@@ -1,5 +1,4 @@
-// Not used anymore. Leaving it for reference
-window.onload = () => {
+ window.onload = () => {
 
      // Display an alert if viewing browser is not chrome.
      // https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome/13348618#13348618
