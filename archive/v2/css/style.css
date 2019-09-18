@@ -243,17 +243,6 @@ kbd {
 }
 
 
-/* ----------------------- */
-/* ---- About Section ---- */
-/* ----------------------- */
-.about {
-    /* margin-top: 2rem; */
-}
-
-.about h2 {
-    /* display: none; */
-}
-
 /* ------------------------ */
 /* ---- Skills Section ---- */
 /* ------------------------ */
@@ -383,10 +372,6 @@ kbd {
 /* ------------------------------- */
 /* ---- Experience & Education---- */
 /* ------------------------------- */
-.experiences {
-    padding-top: 0.5rem;
-}
-
 .experience-subtitle {
     color: var(--main-accent-color);
     font-weight: 700;
@@ -399,21 +384,11 @@ kbd {
     list-style-type: none;
     padding-left: 2rem;
     margin-top: 0;
-    margin-bottom: 0.85rem;
-}
-
-.experience:last-of-type ul {
-    margin-bottom: 0;
 }
 
 .block-list li{
     margin-bottom: 0.5rem;
     font-size: 0.7rem;
-}
-
-.block-list li:last-of-type {
-    margin-bottom: 0;
-    background-: red;
 }
 
 .block-list li::before {
